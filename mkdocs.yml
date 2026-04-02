@@ -1,0 +1,72 @@
+site_name: Navi Robot — Hardware Interface Guide
+site_description: Third-Party Developer Documentation for the Navi Robot Platform
+site_author: Navigait (Xavorcorp)
+site_url: https://your-username.github.io/navi-docs/
+
+repo_name: navi-docs
+repo_url: https://github.com/your-username/navi-docs
+
+theme:
+  name: readthedocs
+  titles_only: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/your-username/navi-docs
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - attr_list
+  - tables
+  - toc:
+      permalink: true
+  - def_list
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Overview: getting-started/overview.md
+    - Network & Connectivity: getting-started/network.md
+    - SSH Access: getting-started/ssh-access.md
+  - ROS Interface:
+    - ROS Environment Setup: ros-interface/environment.md
+    - Navigation Control: ros-interface/navigation.md
+    - Head & Neck Control: ros-interface/head-neck.md
+    - Facial Expressions: ros-interface/expressions.md
+    - ROS Topics Reference: ros-interface/topics.md
+    - Diagnostic Utilities: ros-interface/diagnostics.md
+  - Sensors & Cameras:
+    - Camera Systems: sensors/cameras.md
+    - Cliff Sensors: sensors/cliff-sensors.md
+    - Bumpers: sensors/bumpers.md
+    - Battery Monitoring: sensors/battery.md
+  - Audio System:
+    - Microphone Input: audio/microphone.md
+    - Speaker Output: audio/speaker.md
+    - Volume Control (Linux): audio/volume-linux.md
+    - Volume Control (ROS): audio/volume-ros.md
+  - System Services:
+    - Services Overview: services/overview.md
+    - Orin NX Services: services/orin-nx.md
+    - AGX Orin Services: services/agx-orin.md
+    - Boot Sequence: services/boot-sequence.md
+  - Motor Control:
+    - Differential Drive: motor-control/diff-drive.md
+    - Control Chain: motor-control/control-chain.md
+    - RGB LEDs: motor-control/rgb-leds.md
+  - Integration Guide:
+    - Replacing the AI Pipeline: integration/replacing-pipeline.md
+    - Companion App Integration: integration/companion-app.md
+    - Operational Guidelines: integration/guidelines.md
+  - Troubleshooting: troubleshooting.md
+  - Quick Reference: quick-reference.md
+  - Glossary: glossary.md
+  - Changelog: changelog.md
