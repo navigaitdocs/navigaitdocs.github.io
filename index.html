@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="description" content="Third-Party Developer Documentation for the Navi Robot Platform" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/" />
+      <link rel="shortcut icon" href="site/img/favicon.ico" />
+    <title>Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="site/css/theme.css" />
+    <link rel="stylesheet" href="site/css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "index.md";
+        var mkdocs_page_url = "/navi-docs/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="site/js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="site/" class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="site/search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/navigation/">Navigation Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/topics/">ROS Topics Reference</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/ros-interface/diagnostics/">Diagnostic Utilities</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/sensors/cliff-sensors/">Cliff Sensors</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/sensors/bumpers/">Bumpers</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/services/agx-orin/">AGX Orin Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/services/boot-sequence/">Boot Sequence</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Motor Control</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/motor-control/diff-drive/">Differential Drive</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/motor-control/control-chain/">Control Chain</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/motor-control/rgb-leds/">RGB LEDs</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="site/integration/replacing-pipeline/">Replacing the AI Pipeline</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/integration/companion-app/">Companion App Integration</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="site/integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="site/troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="site/quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="site/glossary/">Glossary</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="site/changelog/">Changelog</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="site/">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="site/" class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Home</li>
+    <li class="wy-breadcrumbs-aside">
+          <a href="https://github.com/your-username/navi-docs/edit/master/docs/index.md">Edit on navi-docs</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="navi-robot-hardware-interface-guide">Navi Robot — Hardware Interface Guide<a class="headerlink" href="#navi-robot-hardware-interface-guide" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Section</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="site/getting-started/overview/">Hardware Interface</a></td>
+<td>Complete hardware specifications for sensors, actuators, cameras, and compute modules.</td>
+</tr>
+<tr>
+<td><a href="site/ros-interface/environment/">ROS Interface</a></td>
+<td>Full ROS 1 (Noetic) topic and parameter reference for navigation, motion, and expressions.</td>
+</tr>
+<tr>
+<td><a href="site/audio/microphone/">Audio System</a></td>
+<td>Microphone capture, speaker output, PulseAudio and ROS-based volume control.</td>
+</tr>
+<tr>
+<td><a href="site/services/overview/">System Services</a></td>
+<td>Systemd services, boot sequence, and service management across both compute boards.</td>
+</tr>
+<tr>
+<td><a href="site/troubleshooting/">Troubleshooting</a></td>
+<td>Step-by-step solutions for connectivity, ROS, audio, camera, and service failures.</td>
+</tr>
+<tr>
+<td><a href="site/quick-reference/">Quick Reference</a></td>
+<td>Single-page cheat sheet with every command you need, organized by category.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="platform-overview">Platform Overview<a class="headerlink" href="#platform-overview" title="Permanent link">&para;</a></h2>
+<p>The <strong>Navi Robot</strong> is a conversational rehabilitation and assistance robot built on a dual-board NVIDIA Jetson architecture, running ROS 1 (Noetic). This documentation provides hardware interface specifications for third-party developers building custom applications on the Navi platform.</p>
+<div class="admonition warning">
+<p class="admonition-title">Confidential</p>
+<p>This document is intended solely for <strong>authorized integration partners</strong>. The proprietary Navi conversational AI application layer is not covered and is not accessible to integration partners.</p>
+</div>
+<hr />
+<h2 id="compute-architecture">Compute Architecture<a class="headerlink" href="#compute-architecture" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Hardware</th>
+<th>Primary Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Main Compute</strong></td>
+<td>NVIDIA Jetson AGX Orin</td>
+<td>AI inference, conversational pipeline, vision models</td>
+</tr>
+<tr>
+<td><strong>ROS Controller</strong></td>
+<td>NVIDIA Jetson Orin NX</td>
+<td>ROS master, navigation, motor control, sensor fusion</td>
+</tr>
+<tr>
+<td><strong>Microcontroller</strong></td>
+<td>STM32</td>
+<td>Low-level motor driver, cliff sensors, bumpers, RGB LEDs</td>
+</tr>
+<tr>
+<td><strong>Wireless MCU</strong></td>
+<td>ESP32</td>
+<td>Power management, head/neck servo control, digital I/O</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="document-scope">Document Scope<a class="headerlink" href="#document-scope" title="Permanent link">&para;</a></h2>
+<p>This guide covers:</p>
+<ul>
+<li>Network topology and IP addressing for all onboard devices</li>
+<li>ROS topic and parameter interfaces for sensors and actuators</li>
+<li>Camera and microphone hardware access</li>
+<li>Audio output and volume control</li>
+<li>Navigation, head/neck, and expression control interfaces</li>
+<li>System service architecture and boot sequence</li>
+<li>Diagnostic and monitoring utilities</li>
+</ul>
+<hr />
+<h2 id="document-info">Document Info<a class="headerlink" href="#document-info" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Platform</strong></td>
+<td>NVIDIA Jetson AGX Orin &amp; Jetson Orin NX</td>
+</tr>
+<tr>
+<td><strong>ROS Version</strong></td>
+<td>ROS 1 (Noetic)</td>
+</tr>
+<tr>
+<td><strong>Document Version</strong></td>
+<td>1.0</td>
+</tr>
+<tr>
+<td><strong>Date</strong></td>
+<td>April 2026</td>
+</tr>
+<tr>
+<td><strong>Organization</strong></td>
+<td>Navigait (Xavorcorp)</td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="site/getting-started/overview/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/your-username/navi-docs" class="fa fa-code-fork" style="color: #fcfcfc"> navi-docs</a>
+        </span>
+    
+    
+    
+      <span><a href="site/getting-started/overview/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="site/js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "site";</script>
+    <script src="site/js/theme_extra.js"></script>
+    <script src="site/js/theme.js"></script>
+      <script src="site/search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-04-02 11:05:35.289104+00:00
+-->
