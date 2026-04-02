@@ -53,17 +53,3 @@ rosparam set /smiley_param talking
 ```bash
 rosparam set /smiley_param lowbattery
 ```
-
-## Feedback to Tablet
-
-The facial expression state is also published to the companion tablet via the `/feedback_to_tablet` topic, allowing the app to mirror the robot's current expression state:
-
-```bash
-rostopic echo /feedback_to_tablet
-```
-
-## Verifying the Current Expression
-
-```bash
-rosparam get /smiley_param
-```

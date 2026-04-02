@@ -18,7 +18,6 @@ The Navi robot runs two separate compute boards, each with its own set of system
 | `hotspot.service` | Initializes the Jetson wireless hotspot for remote access | On boot |
 | `rehab_boot.service` | Launches robotic and autonomous functionalities (navigation, motor control, sensor drivers) | On boot |
 | `cloud_comm.service` | Manages IoT Hub telemetry including battery status payloads | On boot |
-| `orbbec_camera.service` | Launches the Orbbec depth camera driver and ROS node | Always |
 
 ### AGX Orin (AI Compute Board)
 
@@ -54,3 +53,6 @@ sudo systemctl disable <service-name>
 !!! danger "Critical Warning"
     **Do not modify or disable systemd service configurations.**
     If any service is stopped for testing, ensure it is **re-enabled before the next system reboot**. Failure to do so may result in incomplete system initialization and loss of core functionality.
+
+!!! note "Running a Custom Conversation Pipeline"
+    If you want to run your own pipeline of conversation, make sure that on the AGX Orin **all services are disabled except `audio-broadcaster.service`**, which is responsible for running the microphone. All other AGX Orin services must be stopped to avoid conflicts with your custom pipeline.

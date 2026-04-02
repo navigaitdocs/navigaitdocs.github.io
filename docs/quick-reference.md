@@ -8,14 +8,7 @@ A condensed reference card for common operations on the Navi robot platform.
 |---|---|
 | ROS Master (Orin NX) | `ssh nvidia@192.168.8.1` |
 | AI Board (AGX Orin) | `ssh nvidia@192.168.8.2` (from Orin NX) |
-| Default password | `nvidia` |
-
-## Navigation
-
-| Action | Command |
-|---|---|
-| Enable autonomous navigation | `rostopic pub /module_status std_msgs/String "data: 'NavMode,1'" --once` |
-| Disable autonomous navigation | `rostopic pub /module_status std_msgs/String "data: 'NavMode,0'" --once` |
+| Default password | `Provided in Email` |
 
 ## Head & Neck
 
@@ -38,9 +31,6 @@ A condensed reference card for common operations on the Navi robot platform.
 |---|---|
 | List all ROS topics | `rostopic list` |
 | Check battery | `rostopic echo /battery_display` |
-| View cliff sensor data | `rostopic echo /cliff_sensor` |
-| View bumper state | `rostopic echo /bumper_state` |
-| Orbbec camera stream | `rostopic echo /orbbec/camera/color/image_raw` |
 | RealSense camera stream | `rostopic echo /camera/color/image_raw` |
 | Echo any topic | `rostopic echo /<topic_name>` |
 | Check topic frequency | `rostopic hz /<topic_name>` |
@@ -73,18 +63,4 @@ A condensed reference card for common operations on the Navi robot platform.
 |---|---|
 | Jetson Orin NX (ROS Master) | `192.168.8.1` |
 | Jetson AGX Orin (AI) | `192.168.8.2` |
-| Android Tablet | `192.168.8.3` |
-
-## Key ROS Topics
-
-| Topic | Type | Description |
-|---|---|---|
-| `/module_status` | `std_msgs/String` | Navigation / module toggle |
-| `/cmd_vel` | `geometry_msgs/Twist` | Velocity commands |
-| `/battery_display` | `std_msgs/Float32` | Battery percentage |
-| `/cliff_sensor` | `custom_msg` | Cliff detection |
-| `/bumper_state` | `custom_msg` | Bumper contact events |
-| `/rgb` | `custom_msg` | RGB LED control |
-| `/chatbot_command` | `std_msgs/String` | AI pipeline → robot control |
-| `/feedback_to_tablet` | `std_msgs/String` | Robot → companion app |
-| `/cmd_frm_tablet` | `std_msgs/String` | Companion app → robot |
+| Android Tablet (Robot Screen) | `192.168.8.3` |

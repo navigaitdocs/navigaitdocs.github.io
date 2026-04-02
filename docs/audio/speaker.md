@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Navi robot's speaker system is driven via **ElevenLabs cloud TTS**, streaming raw PCM audio directly to the hardware using the `sounddevice` library. This approach is chosen for two specific reasons:
+The Navi robot's speaker system is driven via **Cloud TTS**, streaming raw PCM audio directly to the hardware using the `sounddevice` library. This approach is chosen for two specific reasons:
 
 - **Low latency** — raw PCM skips MP3 decoding entirely
 - **Instant interrupt** — the stream can be aborted mid-sentence, unlike buffered players such as MPV
@@ -47,11 +47,6 @@ AGX Orin (TTS Audio)
        │
      Speakers
 ```
-
-The amplifier board is controlled by the ESP32 and can also be managed via ROS topics (see warning below).
-
-!!! warning "Amplifier-level control"
-    The ROS topics `/audio_volume_control` and `/audio_power_control` control the **hardware amplifier directly**. Incorrect values can damage the speaker hardware. For volume adjustments in your application, use the [PulseAudio interface](volume-linux.md) instead.
 
 ## Playing TTS Audio
 

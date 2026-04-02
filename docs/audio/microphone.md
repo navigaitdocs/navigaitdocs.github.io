@@ -34,10 +34,7 @@ The broadcaster sends identical copies of the audio stream to the following loca
 | Port | Service | Description |
 |---|---|---|
 | `5000` | Raw Recorder | Raw audio for archival and custom processing |
-| `5001` | Cloud ASR | Audio for cloud speech-to-text (e.g., ElevenLabs, Whisper) |
-| `5002` | Wake Word | Trigger word detection |
 | `5003` | VAD | Voice Activity Detection |
-| `5004` | AEC | Acoustic Echo Cancellation |
 
 For custom integrations, **connect to port `5000`** unless you specifically need one of the other streams.
 

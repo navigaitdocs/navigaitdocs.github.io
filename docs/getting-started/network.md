@@ -34,10 +34,7 @@ The robot connects to a home or commercial Wi-Fi network for cloud services.
 |---|---|
 | Supported bands | 2.4 GHz and 5 GHz |
 | Authentication | WPA / WPA2 |
-| **Not supported** | WEP, 802.1X enterprise, open networks |
-
-!!! info "Commercial Networks"
-    For commercial networks with multiple access points sharing the same SSID, credentials are not an issue. If the SSID changes, new credentials must be provided to the robot.
+| **Not supported** | WEP, 802.1X enterprise |
 
 !!! tip "Offline Operation"
     If external internet is unavailable, **internal inter-device communication continues without interruption**. All ROS traffic flows over the internal Ethernet switch.

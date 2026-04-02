@@ -11,45 +11,11 @@ ROS-based volume control topics provide programmatic control of the robot's audi
 
 ## Topics
 
-| Topic | Message Type | Description |
-|---|---|---|
-| `/audio_mute_control` | `std_msgs/Bool` | `true` = Mute, `false` = Unmute |
-| `/audio_volume_control` | `std_msgs/Int8` | `0` = Min volume, `100` = Max volume |
-| `/audio_power_control` | `std_msgs/Bool` | `true` = Power on, `false` = Power off |
-
-## Commands
-
-### Mute
-
-```bash
-rostopic pub /audio_mute_control std_msgs/Bool "data: true" --once
-```
-
-### Unmute
-
-```bash
-rostopic pub /audio_mute_control std_msgs/Bool "data: false" --once
-```
-
-### Set Volume Level
-
-```bash
-rostopic pub /audio_volume_control std_msgs/Int8 "data: 50" --once
-```
-
-Value range: `0` (minimum) to `100` (maximum).
-
-### Power On Amplifier
-
-```bash
-rostopic pub /audio_power_control std_msgs/Bool "data: true" --once
-```
-
-### Power Off Amplifier
-
-```bash
-rostopic pub /audio_power_control std_msgs/Bool "data: false" --once
-```
+| Topic |
+|---|
+| `/audio_mute_control` |
+| `/audio_volume_control` | 
+| `/audio_power_control` | 
 
 ## When to Use Each Interface
 

@@ -11,27 +11,6 @@
 !!! warning "Do Not Conflict with the Internal Subnet"
     The robot's internal IP space (`192.168.8.x`) is reserved. Do not configure conflicting subnets on the home or lab network.
 
-## Service Safety Checklist
-
-Before any system restart, verify all services are enabled:
-
-```bash
-# On Orin NX
-systemctl is-enabled hotspot.service
-systemctl is-enabled rehab_boot.service
-systemctl is-enabled cloud_comm.service
-systemctl is-enabled orbbec_camera.service
-
-# On AGX Orin
-systemctl is-enabled chatbot.service
-systemctl is-enabled audio-broadcaster.service
-systemctl is-enabled riva_container.service
-systemctl is-enabled nano_llm_tools.service
-systemctl is-enabled iothub_monitor.service
-systemctl is-enabled video-recorder.service
-```
-
-All services should return `enabled` (or `static` for oneshot services).
 
 ## Development Best Practices
 
@@ -71,12 +50,3 @@ All services should return `enabled` (or `static` for oneshot services).
    ```bash
    rostopic echo /battery_display
    ```
-
-## Integration Partner Scope
-
-This hardware interface guide covers everything needed to build custom applications on the Navi platform. The following are **not accessible** to integration partners:
-
-- The proprietary Navi conversational AI application layer
-- Internal LangGraph pipeline implementation
-- Neo4j memory system internals
-- Azure IoT Hub connection strings (pre-configured on device)

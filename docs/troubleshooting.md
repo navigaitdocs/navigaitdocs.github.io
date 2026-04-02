@@ -29,22 +29,6 @@ Common problems and their solutions when working with the Navi robot platform.
 
 ---
 
-### Cannot SSH into the AGX Orin (192.168.8.2)
-
-The AGX Orin is only reachable **from the Orin NX**, not directly from your workstation.
-
-```bash
-# Step 1 — SSH into Orin NX first
-ssh nvidia@192.168.8.1
-
-# Step 2 — Then hop to AGX Orin
-ssh nvidia@192.168.8.2
-```
-
-If the hop fails, the Ethernet switch inside the robot may have an issue, or the AGX Orin may have failed to boot. Check the power indicator on the AGX Orin board.
-
----
-
 ## ROS Issues
 
 ### `rostopic list` returns nothing or hangs
@@ -74,64 +58,13 @@ journalctl -u rehab_boot.service -n 50
 
 ---
 
-### Navigation commands have no effect
-
-**Symptoms:** Publishing to `/module_status` does not start navigation.
-
-**Checklist:**
-
-1. Confirm `rehab_boot.service` is running:
-   ```bash
-   systemctl status rehab_boot.service
-   ```
-2. Confirm the topic is active:
-   ```bash
-   rostopic hz /module_status
-   ```
-3. Verify the exact message format — quotes matter:
-   ```bash
-   rostopic pub /module_status std_msgs/String "data: 'NavMode,1'" --once
-   ```
-4. Check for motor driver issues — if the STM32 is not responding, navigation commands will be accepted but wheels won't move. Check `/measured_joint_states`:
-   ```bash
-   rostopic echo /measured_joint_states
-   ```
-
----
-
-### ROS topics from the AGX Orin are not visible
-
-**Cause:** `ROS_IP` or `ROS_HOSTNAME` on the AGX Orin is misconfigured, causing topics to publish to the wrong interface.
-
-**Fix — on the AGX Orin:**
-
-```bash
-echo $ROS_IP
-echo $ROS_HOSTNAME
-# Both should be 192.168.8.2
-```
-
-If wrong, set them manually and restart the chatbot service:
-
-```bash
-export ROS_IP=192.168.8.2
-export ROS_HOSTNAME=192.168.8.2
-sudo systemctl restart chatbot.service
-```
-
----
-
 ## Audio Issues
 
 ### No sound from the robot
 
 **Checklist:**
 
-1. Check that the amplifier is powered on:
-   ```bash
-   rostopic pub /audio_power_control std_msgs/Bool "data: true" --once
-   ```
-2. Check the current volume is not zero:
+1. Check the current volume is not zero:
    ```bash
    DISPLAY= pactl list sinks | grep 'Volume:' | head -n 1 | awk -F / '{print $2}' | xargs
    ```
@@ -195,43 +128,6 @@ The RealSense is managed by the `rehab_boot.service` launch file. If this servic
 # Check if camera device is detected
 lsusb | grep -i intel
 lsusb | grep -i orbbec
-```
-
----
-
-## Service Issues
-
-### A service failed to start at boot
-
-```bash
-# Check which services failed
-systemctl --failed
-
-# Inspect the specific service
-systemctl status <service-name>
-journalctl -u <service-name> -n 50
-
-# Attempt manual restart
-sudo systemctl restart <service-name>
-```
-
----
-
-### `chatbot.service` keeps restarting
-
-**Cause:** A dependency service (Riva, Nano LLM, audio-broadcaster, video-recorder) is not healthy. `chatbot.service` has `Restart=always`, so it loops.
-
-**Fix:**
-
-```bash
-# Check all dependencies first
-systemctl status riva_container.service
-systemctl status nano_llm_tools.service
-systemctl status audio-broadcaster.service
-systemctl status video-recorder.service
-
-# Fix the failing dependency, then chatbot will stabilize
-sudo systemctl restart <failing-service>
 ```
 
 ---

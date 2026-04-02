@@ -44,9 +44,3 @@ rosparam set /neck_cmd 4
 ```bash
 rosparam get /neck_cmd
 ```
-
-## Hardware Notes
-
-- The head/neck servo is controlled by the **ESP32** via digital signals
-- The ESP32 receives commands from the Jetson AGX Orin via digital I/O
-- Joystick input (when a joystick dongle is attached) can also drive neck movement and takes precedence over parameter-based control
