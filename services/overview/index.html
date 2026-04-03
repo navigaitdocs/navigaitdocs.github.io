@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/services/overview/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Services Overview - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Services Overview";
+        var mkdocs_page_input_path = "services/overview.md";
+        var mkdocs_page_url = "/navi-docs/services/overview/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">System Services</li>
+      <li class="breadcrumb-item active">Services Overview</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="services-overview">Services Overview<a class="headerlink" href="#services-overview" title="Permanent link">&para;</a></h1>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<p>The Navi robot runs two separate compute boards, each with its own set of systemd services. Services are configured to start automatically on boot in a defined sequence.</p>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>IP</th>
+<th>Primary Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jetson Orin NX</strong></td>
+<td><code>192.168.8.1</code></td>
+<td>ROS control, navigation, sensors</td>
+</tr>
+<tr>
+<td><strong>Jetson AGX Orin</strong></td>
+<td><code>192.168.8.2</code></td>
+<td>AI inference, conversational pipeline</td>
+</tr>
+</tbody>
+</table>
+<h2 id="all-services-at-a-glance">All Services at a Glance<a class="headerlink" href="#all-services-at-a-glance" title="Permanent link">&para;</a></h2>
+<h3 id="orin-nx-ros-controller-board">Orin NX (ROS Controller Board)<a class="headerlink" href="#orin-nx-ros-controller-board" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+<th>Restart Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hotspot.service</code></td>
+<td>Initializes the Jetson wireless hotspot for remote access</td>
+<td>On boot</td>
+</tr>
+<tr>
+<td><code>rehab_boot.service</code></td>
+<td>Launches robotic and autonomous functionalities (navigation, motor control, sensor drivers)</td>
+<td>On boot</td>
+</tr>
+<tr>
+<td><code>cloud_comm.service</code></td>
+<td>Manages IoT Hub telemetry including battery status payloads</td>
+<td>On boot</td>
+</tr>
+</tbody>
+</table>
+<h3 id="agx-orin-ai-compute-board">AGX Orin (AI Compute Board)<a class="headerlink" href="#agx-orin-ai-compute-board" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Description</th>
+<th>Restart Policy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chatbot.service</code></td>
+<td>Runs the conversational AI agent (central intelligence module)</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>audio-broadcaster.service</code></td>
+<td>GStreamer audio pipelines for microphone capture and broadcast</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>riva_container.service</code></td>
+<td>NVIDIA Riva container for on-device ASR and TTS</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>nano_llm_tools.service</code></td>
+<td>Edge-optimized LLM inference container</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>iothub_monitor.service</code></td>
+<td>Bidirectional IoT Hub communication for commands and telemetry</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>video-recorder.service</code></td>
+<td>Camera hardware initialization and video recording management</td>
+<td>Always</td>
+</tr>
+<tr>
+<td><code>robot-sync-api.service</code></td>
+<td>Fetches latest cloud configuration at boot (oneshot)</td>
+<td>No (oneshot)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="service-management-commands">Service Management Commands<a class="headerlink" href="#service-management-commands" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1"># Check service status</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>systemctl<span class="w"> </span>status<span class="w"> </span>&lt;service-name&gt;
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="c1"># View live service logs</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>&lt;service-name&gt;<span class="w"> </span>-f
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="c1"># Restart a service</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>&lt;service-name&gt;
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="c1"># Enable a service (persist across reboots)</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>&lt;service-name&gt;
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="c1"># Disable a service (testing only — re-enable before reboot)</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>disable<span class="w"> </span>&lt;service-name&gt;
+</span></code></pre></div>
+<div class="admonition danger">
+<p class="admonition-title">Critical Warning</p>
+<p><strong>Do not modify or disable systemd service configurations.</strong>
+If any service is stopped for testing, ensure it is <strong>re-enabled before the next system reboot</strong>. Failure to do so may result in incomplete system initialization and loss of core functionality.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Running a Custom Conversation Pipeline</p>
+<p>If you want to run your own pipeline of conversation, make sure that on the AGX Orin <strong>all services are disabled except <code>audio-broadcaster.service</code></strong>, which is responsible for running the microphone. All other AGX Orin services must be stopped to avoid conflicts with your custom pipeline.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../getting-started/ssh-access/" class="btn btn-neutral float-left" title="SSH Access"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../orin-nx/" class="btn btn-neutral float-right" title="Orin NX Services">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../getting-started/ssh-access/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../orin-nx/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

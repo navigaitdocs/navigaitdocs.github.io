@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/troubleshooting/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Troubleshooting - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Troubleshooting";
+        var mkdocs_page_input_path = "troubleshooting.md";
+        var mkdocs_page_url = "/navi-docs/troubleshooting/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Troubleshooting</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h1>
+<p>Common problems and their solutions when working with the Navi robot platform.</p>
+<hr />
+<h2 id="connectivity-issues">Connectivity Issues<a class="headerlink" href="#connectivity-issues" title="Permanent link">&para;</a></h2>
+<h3 id="cannot-ssh-into-the-robot">Cannot SSH into the robot<a class="headerlink" href="#cannot-ssh-into-the-robot" title="Permanent link">&para;</a></h3>
+<p><strong>Symptoms:</strong> <code>ssh: connect to host 192.168.8.1 port 22: Connection refused</code> or <code>Network is unreachable</code></p>
+<p><strong>Checklist:</strong></p>
+<ol>
+<li>Confirm your workstation is connected to the robot's Wi-Fi hotspot — not your home network.</li>
+<li>Ping the Orin NX first:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ping<span class="w"> </span><span class="m">192</span>.168.8.1
+</span></code></pre></div></li>
+<li>If ping fails, the hotspot may not have started. The <code>hotspot.service</code> may have failed at boot. Physically access the robot and check:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>hotspot.service
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>hotspot.service<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+</span></code></pre></div></li>
+<li>Try restarting the hotspot service:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>hotspot.service
+</span></code></pre></div></li>
+</ol>
+<hr />
+<h2 id="ros-issues">ROS Issues<a class="headerlink" href="#ros-issues" title="Permanent link">&para;</a></h2>
+<h3 id="rostopic-list-returns-nothing-or-hangs"><code>rostopic list</code> returns nothing or hangs<a class="headerlink" href="#rostopic-list-returns-nothing-or-hangs" title="Permanent link">&para;</a></h3>
+<p><strong>Cause:</strong> The ROS Master is not reachable, or the ROS environment is not sourced correctly.</p>
+<p><strong>Fix:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># Verify environment</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_MASTER_URI</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># Expected: http://192.168.8.1:11311</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1"># If empty, source manually</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.bash
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="c1"># Test master connectivity</span>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>rostopic<span class="w"> </span>list
+</span></code></pre></div>
+<p>If the master is unreachable, check <code>rehab_boot.service</code>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>rehab_boot.service
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>rehab_boot.service<span class="w"> </span>-n<span class="w"> </span><span class="m">50</span>
+</span></code></pre></div>
+<hr />
+<h2 id="audio-issues">Audio Issues<a class="headerlink" href="#audio-issues" title="Permanent link">&para;</a></h2>
+<h3 id="no-sound-from-the-robot">No sound from the robot<a class="headerlink" href="#no-sound-from-the-robot" title="Permanent link">&para;</a></h3>
+<p><strong>Checklist:</strong></p>
+<ol>
+<li>Check the current volume is not zero:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>list<span class="w"> </span>sinks<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Volume:&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="w"> </span>/<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs
+</span></code></pre></div></li>
+<li>If volume reads 0%, set it to an audible level:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">60</span>%
+</span></code></pre></div></li>
+<li>Check if audio is muted:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>list<span class="w"> </span>sinks<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Mute:&#39;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="c1"># If &quot;Mute: yes&quot;, unmute:</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span></code></pre></div></li>
+<li>Check <code>audio-broadcaster.service</code> is running:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>audio-broadcaster.service
+</span></code></pre></div></li>
+</ol>
+<hr />
+<h3 id="microphone-input-is-not-being-captured">Microphone input is not being captured<a class="headerlink" href="#microphone-input-is-not-being-captured" title="Permanent link">&para;</a></h3>
+<p><strong>Checklist:</strong></p>
+<ol>
+<li>Confirm <code>audio-broadcaster.service</code> is active:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>audio-broadcaster.service
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>audio-broadcaster.service<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+</span></code></pre></div></li>
+<li>Check if the microphone is muted:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>pactl<span class="w"> </span>list<span class="w"> </span>sources<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span><span class="w"> </span><span class="s1">&#39;Name:&#39;</span>
+</span></code></pre></div></li>
+<li>Unmute the default microphone:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>pactl<span class="w"> </span>set-source-mute<span class="w"> </span>@DEFAULT_SOURCE@<span class="w"> </span><span class="m">0</span>
+</span></code></pre></div></li>
+</ol>
+<hr />
+<h2 id="camera-issues">Camera Issues<a class="headerlink" href="#camera-issues" title="Permanent link">&para;</a></h2>
+<h3 id="camera-topics-show-no-data">Camera topics show no data<a class="headerlink" href="#camera-topics-show-no-data" title="Permanent link">&para;</a></h3>
+<p><strong>Orbbec camera:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>orbbec_camera.service
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>orbbec_camera.service<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+</span></code></pre></div>
+<p>Check logs at:
+- <code>~/camera_service_output.log</code>
+- <code>~/camera_service_error.log</code></p>
+<p><strong>RealSense camera:</strong></p>
+<p>The RealSense is managed by the <code>rehab_boot.service</code> launch file. If this service is healthy but <code>/camera/color/image_raw</code> shows no data, check if the USB connection is secure.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Check if camera device is detected</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>lsusb<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>intel
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>lsusb<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-i<span class="w"> </span>orbbec
+</span></code></pre></div>
+<hr />
+<h2 id="battery-issues">Battery Issues<a class="headerlink" href="#battery-issues" title="Permanent link">&para;</a></h2>
+<h3 id="battery-percentage-not-publishing">Battery percentage not publishing<a class="headerlink" href="#battery-percentage-not-publishing" title="Permanent link">&para;</a></h3>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="c1"># Check if topic exists</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>rostopic<span class="w"> </span>list<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>battery
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="c1"># Check cloud_comm service</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>systemctl<span class="w"> </span>status<span class="w"> </span>cloud_comm.service
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>cloud_comm.service<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+</span></code></pre></div>
+<p>Logs at:
+- <code>~/cloud_comm_output.log</code>
+- <code>~/cloud_comm_error.log</code></p>
+<hr />
+<h2 id="cloud-connectivity-issues">Cloud Connectivity Issues<a class="headerlink" href="#cloud-connectivity-issues" title="Permanent link">&para;</a></h2>
+<h3 id="iot-hub-not-receiving-telemetry">IoT Hub not receiving telemetry<a class="headerlink" href="#iot-hub-not-receiving-telemetry" title="Permanent link">&para;</a></h3>
+<p><strong>Checklist:</strong></p>
+<ol>
+<li>Confirm the robot is connected to home Wi-Fi (internet access):
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>ping<span class="w"> </span>-c<span class="w"> </span><span class="m">3</span><span class="w"> </span><span class="m">8</span>.8.8.8
+</span></code></pre></div></li>
+<li>Check <code>iothub_monitor.service</code> on the AGX Orin:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>iothub_monitor.service
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>iothub_monitor.service<span class="w"> </span>-n<span class="w"> </span><span class="m">30</span>
+</span></code></pre></div></li>
+<li>Check <code>cloud_comm.service</code> on the Orin NX:
+   <div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>cloud_comm.service
+</span></code></pre></div></li>
+</ol>
+<hr />
+<h2 id="general-recovery">General Recovery<a class="headerlink" href="#general-recovery" title="Permanent link">&para;</a></h2>
+<p>If the robot is in an unknown state and you cannot diagnose the issue remotely, perform a <strong>clean reboot</strong>:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="c1"># On Orin NX</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>sudo<span class="w"> </span>reboot
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="c1"># On AGX Orin (SSH from Orin NX)</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>ssh<span class="w"> </span>nvidia@192.168.8.2
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a>sudo<span class="w"> </span>reboot
+</span></code></pre></div>
+<p>All <code>systemd</code> services will restart automatically in the correct order. Allow <strong>2–3 minutes</strong> for full initialization before testing again.</p>
+<div class="admonition warning">
+<p class="admonition-title">Before Rebooting</p>
+<p>Ensure all services you may have disabled during testing are <strong>re-enabled</strong> before rebooting:
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>chatbot.service
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>riva_container.service
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nano_llm_tools.service
+</span></code></pre></div></p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../integration/guidelines/" class="btn btn-neutral float-left" title="Operational Guidelines"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../quick-reference/" class="btn btn-neutral float-right" title="Quick Reference">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../integration/guidelines/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../quick-reference/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

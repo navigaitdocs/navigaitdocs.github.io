@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/getting-started/overview/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Overview - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Overview";
+        var mkdocs_page_input_path = "getting-started/overview.md";
+        var mkdocs_page_url = "/navi-docs/getting-started/overview/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Getting Started</li>
+      <li class="breadcrumb-item active">Overview</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="platform-overview">Platform Overview<a class="headerlink" href="#platform-overview" title="Permanent link">&para;</a></h1>
+<p>The Navi Robot is built on a <strong>dual-board NVIDIA Jetson architecture</strong> with a clear separation of concerns: one board handles ROS-based robot control, and the other handles AI inference and the conversational pipeline.</p>
+<h2 id="hardware-architecture">Hardware Architecture<a class="headerlink" href="#hardware-architecture" title="Permanent link">&para;</a></h2>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────┐
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                    NAVI ROBOT                       │
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│                                                     │
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  ┌──────────────────┐    ┌──────────────────────┐   │
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│  │  Jetson Orin NX  │    │  Jetson AGX Orin     │   │
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│  │  (ROS Master)    │◄──►│  (AI Compute)        │   │
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│  │  192.168.8.1     │    │  192.168.8.2         │   │
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│  └────────┬─────────┘    └──────────────────────┘   │
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│           │ Ethernet                                │
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│  ┌────────▼──────┐                                  │
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  │ Ethernet      │                                  │
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  │ Switch        │                                  │
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│  └───────────────┘                                  │
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│           │                                         │
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  ┌────────▼───────┐                                 │
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  │  Robot Screen  │                                 │
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  │  (Display)     │                                 │
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│  │  192.168.8.3   │                                 │
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│  └────────────────┘                                 │
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>└─────────────────────────────────────────────────────┘
+</span></code></pre></div>
+<h2 id="compute-boards">Compute Boards<a class="headerlink" href="#compute-boards" title="Permanent link">&para;</a></h2>
+<h3 id="jetson-orin-nx-ros-controller">Jetson Orin NX — ROS Controller<a class="headerlink" href="#jetson-orin-nx-ros-controller" title="Permanent link">&para;</a></h3>
+<p>The Orin NX is the <strong>ROS Master</strong> and primary robot control board. It manages:</p>
+<ul>
+<li>ROS Master node (<code>192.168.8.1:11311</code>)</li>
+<li>Navigation stack and motor control</li>
+<li>Sensor fusion (cliff sensors, bumpers, encoders)</li>
+<li>Wi-Fi hotspot for development access</li>
+<li>Cloud telemetry via <code>cloud_comm.service</code></li>
+</ul>
+<h3 id="jetson-agx-orin-ai-compute">Jetson AGX Orin — AI Compute<a class="headerlink" href="#jetson-agx-orin-ai-compute" title="Permanent link">&para;</a></h3>
+<p>The AGX Orin is a <strong>ROS Slave</strong> dedicated to AI workloads. It manages:</p>
+<ul>
+<li>Conversational AI pipeline (<code>chatbot.service</code>)</li>
+<li>NVIDIA Riva ASR/TTS (on-device speech)</li>
+<li>Edge LLM inference (<code>nano_llm_tools.service</code>)</li>
+<li>Video recording and vision models</li>
+<li>IoT Hub bidirectional communication</li>
+</ul>
+<h2 id="microcontrollers">Microcontrollers<a class="headerlink" href="#microcontrollers" title="Permanent link">&para;</a></h2>
+<p>The <strong>low-level microcontrollers</strong> are handling: </p>
+<ul>
+<li>Wheel motor drivers </li>
+<li>Fornt/ Rear Bumpers</li>
+<li>RGB status LEDs</li>
+<li>Communication with ROS via ROSSerial</li>
+<li>Power management</li>
+<li>Head/neck servo control</li>
+</ul>
+<h2 id="internal-ip-map">Internal IP Map<a class="headerlink" href="#internal-ip-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>IP Address</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jetson Orin NX</td>
+<td><code>192.168.8.1</code></td>
+<td>ROS Master, Hotspot</td>
+</tr>
+<tr>
+<td>Jetson AGX Orin</td>
+<td><code>192.168.8.2</code></td>
+<td>AI Compute (ROS Slave)</td>
+</tr>
+<tr>
+<td>Robot Screen (Tablet)</td>
+<td><code>192.168.8.3</code></td>
+<td>Robot Facial Display</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code>192.168.8.x</code> subnet is reserved for the robot's internal network. Do not configure conflicting subnets on the home network.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../.." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../network/" class="btn btn-neutral float-right" title="Network & Connectivity">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../.." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../network/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/services/agx-orin/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>AGX Orin Services - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "AGX Orin Services";
+        var mkdocs_page_input_path = "services/agx-orin.md";
+        var mkdocs_page_url = "/navi-docs/services/agx-orin/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">System Services</li>
+      <li class="breadcrumb-item active">AGX Orin Services</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="agx-orin-services">AGX Orin Services<a class="headerlink" href="#agx-orin-services" title="Permanent link">&para;</a></h1>
+<p>The Jetson AGX Orin is the <strong>AI Compute</strong> board. It runs all services related to the conversational AI pipeline, speech, and cloud communication.</p>
+<h2 id="chatbotservice">chatbot.service<a class="headerlink" href="#chatbotservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Runs the Navi conversational AI agent — the central intelligence module</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td><code>nano_llm_tools.service</code>, <code>riva_container.service</code>, <code>audio-broadcaster.service</code>, <code>video-recorder.service</code></td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always (auto-restart on failure)</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 3 — after all upstream dependencies are healthy</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>chatbot.service
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>chatbot.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="audio-broadcasterservice">audio-broadcaster.service<a class="headerlink" href="#audio-broadcasterservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Activates GStreamer pipelines to capture and broadcast microphone streams</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>System audio hardware (ALSA/PulseAudio)</td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 1 (early boot) — required before <code>chatbot.service</code></td>
+</tr>
+</tbody>
+</table>
+<p>Makes raw audio input available to ASR, wake word detection, and voice activity detection modules over GStreamer's UDP streaming infrastructure.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>audio-broadcaster.service
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>audio-broadcaster.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="riva_containerservice">riva_container.service<a class="headerlink" href="#riva_containerservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Launches the NVIDIA Riva container for on-device ASR and TTS</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>NVIDIA Container Runtime, GPU drivers</td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 1 (early boot) — must be healthy before <code>chatbot.service</code> starts</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>riva_container.service
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>riva_container.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="nano_llm_toolsservice">nano_llm_tools.service<a class="headerlink" href="#nano_llm_toolsservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Starts the Nano LLM container for edge-optimized LLM inference</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>NVIDIA Container Runtime, GPU drivers</td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 1 (early boot) — must be healthy before <code>chatbot.service</code> starts</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>nano_llm_tools.service
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>nano_llm_tools.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="iothub_monitorservice">iothub_monitor.service<a class="headerlink" href="#iothub_monitorservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Bidirectional IoT Hub communication between the robot and cloud backend</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Network connectivity, Azure IoT Hub credentials</td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 2 — after network is available</td>
+</tr>
+</tbody>
+</table>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>iothub_monitor.service
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>iothub_monitor.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="video-recorderservice">video-recorder.service<a class="headerlink" href="#video-recorderservice" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Detail</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Purpose</strong></td>
+<td>Activates camera hardware and manages video recording sessions</td>
+</tr>
+<tr>
+<td><strong>Dependencies</strong></td>
+<td>Camera hardware (CSI/USB), ffmpeg</td>
+</tr>
+<tr>
+<td><strong>Restart Policy</strong></td>
+<td>Always</td>
+</tr>
+<tr>
+<td><strong>Start Order</strong></td>
+<td>Phase 1 — independent of conversational pipeline</td>
+</tr>
+</tbody>
+</table>
+<p>Initializes the camera feed for activity recognition, gait analysis, and fall detection. Handles on-demand video capture, encoding via ffmpeg, and local storage.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>systemctl<span class="w"> </span>status<span class="w"> </span>video-recorder.service
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>journalctl<span class="w"> </span>-u<span class="w"> </span>video-recorder.service<span class="w"> </span>-f
+</span></code></pre></div>
+<h2 id="orbbec-camera-container">Orbbec Camera Container<a class="headerlink" href="#orbbec-camera-container" title="Permanent link">&para;</a></h2>
+<p>The Orbbec depth camera driver runs via a Docker container (<code>aliahmadxvr/orbbec-noetic:jetpack5.1.2</code>) directly on boot using <code>--restart=always</code>. You can disable it if the camera is not required.</p>
+<h3 id="manual-run-interactivedebugging">Manual Run (Interactive/Debugging)<a class="headerlink" href="#manual-run-interactivedebugging" title="Permanent link">&para;</a></h3>
+<p>Use this command to run the container in interactive mode. The <code>--rm</code> flag ensures the container is automatically removed when stopped.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-it<span class="w"> </span>--rm<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span>--name<span class="w"> </span>orbbec-container<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span>--network<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.8.1:11311<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">  </span>--runtime<span class="w"> </span>nvidia<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">  </span>--device<span class="w"> </span>/dev/bus/usb:/dev/bus/usb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">  </span>aliahmadxvr/orbbec-noetic:jetpack5.1.2
+</span></code></pre></div>
+<h3 id="run-on-boot-automatic-startup">Run on Boot (Automatic Startup)<a class="headerlink" href="#run-on-boot-automatic-startup" title="Permanent link">&para;</a></h3>
+<p>To ensure the camera driver and ROS topics are published automatically on every boot, use the command below. The <code>--restart=always</code> flag lets Docker manage automatic startup.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>docker<span class="w"> </span>run<span class="w"> </span>-d<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span>--name<span class="w"> </span>orbbec-container<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span>--network<span class="o">=</span>host<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.8.1:11311<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span>-e<span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span><span class="k">$(</span>hostname<span class="w"> </span>-I<span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1}&#39;</span><span class="k">)</span><span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span>--runtime<span class="w"> </span>nvidia<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span>--device<span class="w"> </span>/dev/bus/usb:/dev/bus/usb<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-9"><a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span>--privileged<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-10"><a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span>--restart<span class="o">=</span>always<span class="w"> </span><span class="se">\</span>
+</span><span id="__span-7-11"><a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">  </span>aliahmadxvr/orbbec-noetic:jetpack5.1.2
+</span></code></pre></div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../orin-nx/" class="btn btn-neutral float-left" title="Orin NX Services"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../../audio/microphone/" class="btn btn-neutral float-right" title="Microphone Input">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../orin-nx/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../../audio/microphone/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

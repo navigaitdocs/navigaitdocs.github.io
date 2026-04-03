@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/quick-reference/" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>Quick Reference - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Quick Reference";
+        var mkdocs_page_input_path = "quick-reference.md";
+        var mkdocs_page_url = "/navi-docs/quick-reference/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../services/agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">Quick Reference</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="quick-reference">Quick Reference<a class="headerlink" href="#quick-reference" title="Permanent link">&para;</a></h1>
+<p>A condensed reference card for common operations on the Navi robot platform.</p>
+<h2 id="ssh-access">SSH Access<a class="headerlink" href="#ssh-access" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROS Master (Orin NX)</td>
+<td><code>ssh nvidia@192.168.8.1</code></td>
+</tr>
+<tr>
+<td>AI Board (AGX Orin)</td>
+<td><code>ssh nvidia@192.168.8.2</code> (from Orin NX)</td>
+</tr>
+<tr>
+<td>Default password</td>
+<td><code>Provided in Email</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="head-neck">Head &amp; Neck<a class="headerlink" href="#head-neck" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neutral position</td>
+<td><code>rosparam set /neck_cmd 1</code></td>
+</tr>
+<tr>
+<td>Rotate left</td>
+<td><code>rosparam set /neck_cmd 3</code></td>
+</tr>
+<tr>
+<td>Rotate right</td>
+<td><code>rosparam set /neck_cmd 4</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="facial-expressions">Facial Expressions<a class="headerlink" href="#facial-expressions" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set expression</td>
+<td><code>rosparam set /smiley_param &lt;expression&gt;</code></td>
+</tr>
+<tr>
+<td>Available expressions</td>
+<td><code>smiling</code>, <code>receiving_audio</code>, <code>thinking</code>, <code>talking</code>, <code>waving</code>, <code>lowbattery</code>, <code>charging</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="sensors-diagnostics">Sensors &amp; Diagnostics<a class="headerlink" href="#sensors-diagnostics" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List all ROS topics</td>
+<td><code>rostopic list</code></td>
+</tr>
+<tr>
+<td>Check battery</td>
+<td><code>rostopic echo /battery_display</code></td>
+</tr>
+<tr>
+<td>RealSense camera stream</td>
+<td><code>rostopic echo /camera/color/image_raw</code></td>
+</tr>
+<tr>
+<td>Echo any topic</td>
+<td><code>rostopic echo /&lt;topic_name&gt;</code></td>
+</tr>
+<tr>
+<td>Check topic frequency</td>
+<td><code>rostopic hz /&lt;topic_name&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="audio-volume-control-pulseaudio">Audio — Volume Control (PulseAudio)<a class="headerlink" href="#audio-volume-control-pulseaudio" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set volume to 50%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 50%</code></td>
+</tr>
+<tr>
+<td>Increase volume by 5%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 +5%</code></td>
+</tr>
+<tr>
+<td>Decrease volume by 5%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 -5%</code></td>
+</tr>
+<tr>
+<td>Get current volume</td>
+<td><code>DISPLAY= pactl list sinks \| grep 'Volume:' \| head -n 1 \| awk -F / '{print $2}' \| xargs</code></td>
+</tr>
+<tr>
+<td>Mute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 1</code></td>
+</tr>
+<tr>
+<td>Unmute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 0</code></td>
+</tr>
+<tr>
+<td>Toggle mute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 toggle</code></td>
+</tr>
+<tr>
+<td>Toggle mic mute</td>
+<td><code>pactl set-source-mute @DEFAULT_SOURCE@ toggle</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="service-management">Service Management<a class="headerlink" href="#service-management" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Check service status</td>
+<td><code>systemctl status &lt;service-name&gt;</code></td>
+</tr>
+<tr>
+<td>View service logs</td>
+<td><code>journalctl -u &lt;service-name&gt; -f</code></td>
+</tr>
+<tr>
+<td>Restart a service</td>
+<td><code>sudo systemctl restart &lt;service-name&gt;</code></td>
+</tr>
+<tr>
+<td>Enable a service</td>
+<td><code>sudo systemctl enable &lt;service-name&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ip-address-map">IP Address Map<a class="headerlink" href="#ip-address-map" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Device</th>
+<th>IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jetson Orin NX (ROS Master)</td>
+<td><code>192.168.8.1</code></td>
+</tr>
+<tr>
+<td>Jetson AGX Orin (AI)</td>
+<td><code>192.168.8.2</code></td>
+</tr>
+<tr>
+<td>Android Tablet (Robot Screen)</td>
+<td><code>192.168.8.3</code></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../troubleshooting/" class="btn btn-neutral float-left" title="Troubleshooting"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../troubleshooting/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

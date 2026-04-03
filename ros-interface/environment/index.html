@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/ros-interface/environment/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>ROS Environment Setup - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "ROS Environment Setup";
+        var mkdocs_page_input_path = "ros-interface/environment.md";
+        var mkdocs_page_url = "/navi-docs/ros-interface/environment/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-linux/">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../audio/volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">ROS Interface</li>
+      <li class="breadcrumb-item active">ROS Environment Setup</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="ros-environment">ROS Environment<a class="headerlink" href="#ros-environment" title="Permanent link">&para;</a></h1>
+<h2 id="architecture-overview">Architecture Overview<a class="headerlink" href="#architecture-overview" title="Permanent link">&para;</a></h2>
+<p>Only the <strong>Jetson Orin NX</strong> runs ROS natively. It acts as the <strong>ROS Master</strong> for the entire robot.</p>
+<p>The <strong>Jetson AGX Orin</strong> does <strong>not</strong> have ROS installed on the host. Instead, it communicates with the ROS ecosystem on OrinNX via the <strong>rosbridge</strong> server (WebSocket-based), using Python code that calls the <code>roslibpy</code> library. This allows the AGX Orin to publish/subscribe to topics and get/set parameters on the OrinNX without a native ROS installation.</p>
+<table>
+<thead>
+<tr>
+<th>Board</th>
+<th>ROS Access</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jetson Orin NX</td>
+<td>Native ROS Noetic</td>
+<td>Direct ROS environment</td>
+</tr>
+<tr>
+<td>Jetson AGX Orin</td>
+<td>Via rosbridge</td>
+<td><code>roslibpy</code> over WebSocket</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="orin-nx-native-ros-environment">Orin NX — Native ROS Environment<a class="headerlink" href="#orin-nx-native-ros-environment" title="Permanent link">&para;</a></h2>
+<h3 id="ros-master-uri">ROS Master URI<a class="headerlink" href="#ros-master-uri" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>http://192.168.8.1:11311
+</span></code></pre></div>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<p>The <code>.bashrc</code> on the Orin NX sources the ROS environment automatically on every terminal session:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ROS_MASTER_URI</code></td>
+<td><code>http://192.168.8.1:11311</code></td>
+<td>Identifies this device as the ROS Master</td>
+</tr>
+<tr>
+<td><code>ROS_HOSTNAME</code></td>
+<td>Local device hostname</td>
+<td>Used for ROS networking</td>
+</tr>
+<tr>
+<td><code>ROS_IP</code></td>
+<td>Local device IP</td>
+<td>Used for ROS networking</td>
+</tr>
+</tbody>
+</table>
+<h3 id="manual-sourcing">Manual Sourcing<a class="headerlink" href="#manual-sourcing" title="Permanent link">&para;</a></h3>
+<p>If you need to source the ROS environment manually on the Orin NX:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">source</span><span class="w"> </span>/opt/ros/noetic/setup.bash
+</span></code></pre></div>
+<h3 id="verifying-the-setup">Verifying the Setup<a class="headerlink" href="#verifying-the-setup" title="Permanent link">&para;</a></h3>
+<p>Run these on the <strong>Orin NX</strong> (or any device with native ROS pointed at the master):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Check ROS master is reachable</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>rostopic<span class="w"> </span>list
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Verify environment variables</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_MASTER_URI</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_HOSTNAME</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$ROS_IP</span>
+</span></code></pre></div>
+<hr />
+<h2 id="agx-orin-ros-access-via-rosbridge">AGX Orin — ROS Access via rosbridge<a class="headerlink" href="#agx-orin-ros-access-via-rosbridge" title="Permanent link">&para;</a></h2>
+<p>The AGX Orin does not run ROS on the host. To interact with ROS topics and parameters, it connects to the <strong>rosbridge WebSocket server</strong> running on the Orin NX.</p>
+<h3 id="rosbridge-endpoint">rosbridge Endpoint<a class="headerlink" href="#rosbridge-endpoint" title="Permanent link">&para;</a></h3>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>ws://192.168.8.1:9090
+</span></code></pre></div>
+<h3 id="python-example-using-roslibpy">Python Example using <code>roslibpy</code><a class="headerlink" href="#python-example-using-roslibpy" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">roslibpy</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="c1"># Connect to the rosbridge server on OrinNX</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">client</span> <span class="o">=</span> <span class="n">roslibpy</span><span class="o">.</span><span class="n">Ros</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s1">&#39;192.168.8.1&#39;</span><span class="p">,</span> <span class="n">port</span><span class="o">=</span><span class="mi">9090</span><span class="p">)</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="n">client</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Subscribe to a topic</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="n">listener</span> <span class="o">=</span> <span class="n">roslibpy</span><span class="o">.</span><span class="n">Topic</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/your/topic&#39;</span><span class="p">,</span> <span class="s1">&#39;std_msgs/String&#39;</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="n">listener</span><span class="o">.</span><span class="n">subscribe</span><span class="p">(</span><span class="k">lambda</span> <span class="n">msg</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Received: </span><span class="si">{</span><span class="n">msg</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">))</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="c1"># Publish to a topic</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="n">publisher</span> <span class="o">=</span> <span class="n">roslibpy</span><span class="o">.</span><span class="n">Topic</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/your/topic&#39;</span><span class="p">,</span> <span class="s1">&#39;std_msgs/String&#39;</span><span class="p">)</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="n">publisher</span><span class="o">.</span><span class="n">publish</span><span class="p">(</span><span class="n">roslibpy</span><span class="o">.</span><span class="n">Message</span><span class="p">({</span><span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="s1">&#39;hello from AGX Orin&#39;</span><span class="p">}))</span>
+</span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>
+</span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a><span class="c1"># Get a ROS parameter</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a><span class="n">param</span> <span class="o">=</span> <span class="n">roslibpy</span><span class="o">.</span><span class="n">Param</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="s1">&#39;/some_param&#39;</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a><span class="nb">print</span><span class="p">(</span><span class="n">param</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+</span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>
+</span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a><span class="c1"># Set a ROS parameter</span>
+</span><span id="__span-4-20"><a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a><span class="n">param</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="s1">&#39;new_value&#39;</span><span class="p">)</span>
+</span><span id="__span-4-21"><a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>
+</span><span id="__span-4-22"><a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a><span class="n">client</span><span class="o">.</span><span class="n">terminate</span><span class="p">()</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Install roslibpy on AGX Orin</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>pip<span class="w"> </span>install<span class="w"> </span>roslibpy
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">rosbridge must be running on OrinNX</p>
+<p>The rosbridge WebSocket server is started as part of the normal boot sequence on the Orin NX. If it is not reachable, verify <code>rehab_boot.service</code> is running on the Orin NX.</p>
+</div>
+<hr />
+<h2 id="external-workstations-native-ros">External Workstations (Native ROS)<a class="headerlink" href="#external-workstations-native-ros" title="Permanent link">&para;</a></h2>
+<p>If you have a workstation with ROS installed and want to connect it to the robot's ROS network via the hotspot:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_MASTER_URI</span><span class="o">=</span>http://192.168.8.1:11311
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_IP</span><span class="o">=</span>&lt;your-workstation-ip&gt;
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">ROS_HOSTNAME</span><span class="o">=</span>&lt;your-workstation-ip&gt;
+</span></code></pre></div>
+<p>Then use standard ROS tools (<code>rostopic</code>, <code>rosnode</code>, etc.) as normal.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Workstations without ROS can also use the rosbridge WebSocket endpoint (<code>ws://192.168.8.1:9090</code>) with <code>roslibpy</code>, just like the AGX Orin does.</p>
+</div>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../../audio/volume-ros/" class="btn btn-neutral float-left" title="Volume Control (ROS)"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../head-neck/" class="btn btn-neutral float-right" title="Head & Neck Control">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../../audio/volume-ros/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../head-neck/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

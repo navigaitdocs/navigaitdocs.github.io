@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="author" content="Navigait (Xavorcorp)" /><link rel="canonical" href="https://your-username.github.io/navi-docs/audio/volume-linux/" />
+      <link rel="shortcut icon" href="../../img/favicon.ico" />
+    <title>Volume Control (Linux) - Navi Robot — Hardware Interface Guide</title>
+    <link rel="stylesheet" href="../../css/theme.css" />
+    <link rel="stylesheet" href="../../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Volume Control (Linux)";
+        var mkdocs_page_input_path = "audio/volume-linux.md";
+        var mkdocs_page_url = "/navi-docs/audio/volume-linux/";
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../.." class="icon icon-home"> Navi Robot — Hardware Interface Guide
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../..">Home</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Getting Started</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/overview/">Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/network/">Network & Connectivity</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../getting-started/ssh-access/">SSH Access</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">System Services</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/overview/">Services Overview</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/orin-nx/">Orin NX Services</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../services/agx-orin/">AGX Orin Services</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Audio System</span></p>
+              <ul class="current">
+                  <li class="toctree-l1"><a class="reference internal" href="../microphone/">Microphone Input</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../speaker/">Speaker Output</a>
+                  </li>
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Volume Control (Linux)</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../volume-ros/">Volume Control (ROS)</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">ROS Interface</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/environment/">ROS Environment Setup</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/head-neck/">Head & Neck Control</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../ros-interface/expressions/">Facial Expressions</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Sensors & Cameras</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/cameras/">Camera Systems</a>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../sensors/battery/">Battery Monitoring</a>
+                  </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Integration Guide</span></p>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="../../integration/guidelines/">Operational Guidelines</a>
+                  </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../troubleshooting/">Troubleshooting</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../quick-reference/">Quick Reference</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../..">Navi Robot — Hardware Interface Guide</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../.." class="icon icon-home" aria-label="Docs"></a></li>
+          <li class="breadcrumb-item">Audio System</li>
+      <li class="breadcrumb-item active">Volume Control (Linux)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="volume-control-linux-pulseaudio">Volume Control — Linux (PulseAudio)<a class="headerlink" href="#volume-control-linux-pulseaudio" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Volume on the Navi robot is managed at the <strong>OS level via PulseAudio</strong>. This is the recommended method for application-level volume control. All commands use the <code>DISPLAY=</code> prefix because the robot runs <strong>headless</strong> (no graphical session).</p>
+<div class="admonition success">
+<p class="admonition-title">Use This for Application-Level Control</p>
+<p>For any application that needs to adjust volume, use these PulseAudio commands. Do <strong>not</strong> use the ROS audio topics for application-level volume — those control the hardware amplifier directly and can damage speaker hardware.</p>
+</div>
+<h2 id="set-volume-absolute">Set Volume (Absolute)<a class="headerlink" href="#set-volume-absolute" title="Permanent link">&para;</a></h2>
+<p>Set the volume of sink <code>0</code> (primary audio output) to a specific percentage:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span>&lt;percentage&gt;%
+</span></code></pre></div>
+<p><strong>Examples:</strong></p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># Set volume to 10%</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">10</span>%
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># Set volume to 50%</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">50</span>%
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># Set volume to 100%</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">100</span>%
+</span></code></pre></div>
+<h2 id="adjust-volume-relative">Adjust Volume (Relative)<a class="headerlink" href="#adjust-volume-relative" title="Permanent link">&para;</a></h2>
+<p>Increase or decrease volume relative to the current level:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Increase by 5%</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span>+5%
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Decrease by 5%</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-volume<span class="w"> </span><span class="m">0</span><span class="w"> </span>-5%
+</span></code></pre></div>
+<h2 id="retrieve-current-volume">Retrieve Current Volume<a class="headerlink" href="#retrieve-current-volume" title="Permanent link">&para;</a></h2>
+<p>Get the current volume level as a clean percentage string:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>list<span class="w"> </span>sinks<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span><span class="s1">&#39;Volume:&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span>-F<span class="w"> </span>/<span class="w"> </span><span class="s1">&#39;{print $2}&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs
+</span></code></pre></div>
+<p><strong>How it works:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pactl list sinks</code></td>
+<td>Dumps all audio output device info</td>
+</tr>
+<tr>
+<td><code>grep 'Volume:'</code></td>
+<td>Filters to volume lines only</td>
+</tr>
+<tr>
+<td><code>head -n 1</code></td>
+<td>Takes the first occurrence (default device)</td>
+</tr>
+<tr>
+<td><code>awk -F / '{print $2}'</code></td>
+<td>Extracts the percentage value</td>
+</tr>
+<tr>
+<td><code>xargs</code></td>
+<td>Trims surrounding whitespace</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mute-audio">Mute Audio<a class="headerlink" href="#mute-audio" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">1</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code> (or <code>true</code>)</td>
+<td>Mute on</td>
+</tr>
+<tr>
+<td><code>0</code> (or <code>false</code>)</td>
+<td>Mute off</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unmute-audio">Unmute Audio<a class="headerlink" href="#unmute-audio" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="m">0</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Unmuting restores volume to whatever level it was at before muting.</p>
+</div>
+<h2 id="toggle-mute-state">Toggle Mute State<a class="headerlink" href="#toggle-mute-state" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nv">DISPLAY</span><span class="o">=</span><span class="w"> </span>pactl<span class="w"> </span>set-sink-mute<span class="w"> </span><span class="m">0</span><span class="w"> </span>toggle
+</span></code></pre></div>
+<p>This switches between muted and unmuted — the most convenient command for a mute/unmute button implementation.</p>
+<h2 id="mute-default-microphone">Mute Default Microphone<a class="headerlink" href="#mute-default-microphone" title="Permanent link">&para;</a></h2>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>pactl<span class="w"> </span>set-source-mute<span class="w"> </span>@DEFAULT_SOURCE@<span class="w"> </span>toggle
+</span></code></pre></div>
+<p>The <code>@DEFAULT_SOURCE@</code> shortcut avoids needing to look up the full microphone device name.</p>
+<h2 id="command-reference-summary">Command Reference Summary<a class="headerlink" href="#command-reference-summary" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Command</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set volume to 50%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 50%</code></td>
+</tr>
+<tr>
+<td>Increase by 5%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 +5%</code></td>
+</tr>
+<tr>
+<td>Decrease by 5%</td>
+<td><code>DISPLAY= pactl set-sink-volume 0 -5%</code></td>
+</tr>
+<tr>
+<td>Get current volume</td>
+<td><code>DISPLAY= pactl list sinks \| grep 'Volume:' \| head -n 1 \| awk -F / '{print $2}' \| xargs</code></td>
+</tr>
+<tr>
+<td>Mute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 1</code></td>
+</tr>
+<tr>
+<td>Unmute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 0</code></td>
+</tr>
+<tr>
+<td>Toggle mute</td>
+<td><code>DISPLAY= pactl set-sink-mute 0 toggle</code></td>
+</tr>
+<tr>
+<td>Toggle mic mute</td>
+<td><code>pactl set-source-mute @DEFAULT_SOURCE@ toggle</code></td>
+</tr>
+</tbody>
+</table>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../speaker/" class="btn btn-neutral float-left" title="Speaker Output"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../volume-ros/" class="btn btn-neutral float-right" title="Volume Control (ROS)">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../speaker/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../volume-ros/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "../..";</script>
+    <script src="../../js/theme_extra.js"></script>
+    <script src="../../js/theme.js"></script>
+      <script src="../../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
